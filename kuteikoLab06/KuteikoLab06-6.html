@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Friends</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        img {
+            border: 1px solid black;
+            border-radius: 20px;
+            padding: 20px;
+        }
+
+        .container {
+            position: relative;
+            text-align: center;
+            margin: 20px;
+        }
+        #infoWindow {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 10px;
+            box-sizing: border-box;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Застосовуємо її до малюнку -->
+<div class="container">
+    <map name="friendShip">
+        <!-- Область для друга 1 -->
+        <area shape="poly" coords="0,0, 0,600, 200,600, 200,0" href="#" alt="Friend 1" title="Friend 1 <br> Information 1">
+
+        <!-- Область для друга 2 -->
+        <area shape="poly" coords="200,0, 200,600, 400,600, 400,0" href="#" alt="Friend 2" title="Friend 2 <br> Information 2">
+
+        <!-- Область для друга 3 -->
+        <area shape="poly" coords="400,0, 400,600, 600,600, 600,0" href="#" alt="Friend 3" title="Friend 3 <br> Information 3">
+    </map>
+
+    <img src="./img/friends.svg" width="500" height="500" usemap="#friendShip" alt="Photo Friends">
+
+    <div id="infoWindow"></div>
+</div>
+
+<script>
+    const areas = document.querySelectorAll('area');
+    const infoWindow = document.getElementById('infoWindow');
+
+    areas.forEach(area => {
+        area.addEventListener('mouseover', function() {
+            const title = this.getAttribute('title');
+            infoWindow.innerHTML = title;
+            infoWindow.style.display = 'block';
+        });
+
+        area.addEventListener('mouseout', function() {
+            infoWindow.style.display = 'none';
+        });
+    });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Сенсорне Зображення</title>
+    <style>
+        #map {
+            position: relative;
+        }
+
+        .area {
+            position: absolute;
+            cursor: pointer;
+            color: white;
+        }
+
+        .tip {
+            display: none;
+            position: absolute;
+            background-color: #f1f1f1;
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            z-index: 1;
+        }
+    </style>
+</head>
+<body>
+    <div id="map">
+        <img src="./img/map.jpg" alt="Сенсорна карта" width="1000" height="500">
+
+        <!-- Область 1 -->
+    <div class="area" style="top: 100px; left: 230px; width: 100px; height: 50px;"
+        onmouseover="showTip('This is North America')"
+        onmouseout="hideTip()">North America
+    </div>
+
+        <!-- Область 2 -->
+    <div class="area" style="top: 280px; left: 320px; width: 80px; height: 80px;"
+        onmouseover="showTip('This is South America')"
+        onmouseout="hideTip()">South America
+    </div>
+
+    <!-- Область 3 -->
+    <div class="area" style="top: 200px; left: 520px; width: 80px; height: 80px;"
+        onmouseover="showTip('This is Africa')"
+        onmouseout="hideTip()">Africa
+    </div>
+
+    <!-- Область 4 -->
+    <div class="area" style="top: 100px; left: 550px; width: 80px; height: 80px;"
+        onmouseover="showTip('This is Europe')"
+        onmouseout="hideTip()">Europe
+    </div>
+
+    <!-- Область 5 -->
+    <div class="area" style="top: 100px; left: 670px; width: 80px; height: 80px;"
+        onmouseover="showTip('This is Asia')"
+        onmouseout="hideTip()">Asia
+    </div>
+
+    <!-- Область 6 -->
+    <div class="area" style="top: 320px; left: 820px; width: 80px; height: 80px;"
+        onmouseover="showTip('This is Australia')"
+        onmouseout="hideTip()">Australia
+    </div>
+
+            <!-- Підказка -->
+        <div id="tip" class="tip"></div>
+    </div>
+
+<script>
+    function showTip(text) {
+        document.getElementById('tip').innerHTML = text;
+        document.getElementById('tip').style.display = 'block';
+    }
+
+    function hideTip() {
+        document.getElementById('tip').style.display = 'none';
+    }
+</script>
+
+</body>
+</html>

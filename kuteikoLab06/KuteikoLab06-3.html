@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Моя Батківщина</title>
+</head>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        background-color: #f3f3f3;
+    }
+    .header {
+        text-align: center;
+        color: white;
+        background-color: black;
+        padding: 0;
+        margin: 0;
+        margin-block-start: 0;
+        margin-block-end: 0;
+    }
+    .title {
+        margin-block-start: 0;
+        margin-block-end: 0;
+        padding: 20px 0;
+    }
+
+    .img__header {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        background-color: #fff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        margin: 20px 30px 0px 30px;
+        border-radius: 20px;
+    }
+
+    img {
+        margin: 0 auto;
+        align-items: center;
+        width: 400px;
+        height: 300px;
+        border-radius: 10px;
+        transition: opacity .3s ease-in;
+    }
+
+    img:hover {
+        opacity: .7;
+    }
+</style>
+<body>
+    <div class="header"><h1 class="title">Моя Полтавщина</h1></div>
+    <div class="img__header">
+        <img class="img" src="./img/photo1.jpg" alt="" title="Гарний краєвид на Полтавщині" onclick="showHover('Гарний краєвид на Полтавщині')">
+        <img class="img" src="./img/photo2.jpg" alt="" title="Архітектурні пам'ятки регіону" onclick="showHover('Архітектурні пам\'ятки регіону')">
+        <img class="img" src="./img/photo3.jpg" alt="" title="Природа Полтавщини" onclick="showHover('Природа Полтавщини')">
+    </div>
+
+    <div class="hover" onclick="closeHover()">
+        <div class="hover-content">
+            <span class="close-btn">&times;</span>
+            <p id="hover-text"></p>
+        </div>
+    </div>
+
+    <script>
+        function showHover(text) {
+            document.getElementById('hover-text').innerText = text;
+            document.querySelector('.hover').style.display = 'flex';
+        }
+    
+        function closePopup() {
+            document.querySelector('.hover').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
